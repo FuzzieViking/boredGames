@@ -33,7 +33,7 @@ var TicTacToe =
         game.images[1] = new Image(game.image_size[0], game.image_size[1]);
         game.images[1].src = game.paths.img + 'ttt_x.png';
         game.images[2] = new Image(game.image_size[0], game.image_size[1]);
-        game.images[2].src = game.paths.img + 'ttt_o.png';alert(game.images[2].src);
+        game.images[2].src = game.paths.img + 'ttt_o.png';
        //Turn the stats into a usuable object
         if (theParams['stats'])
         {
@@ -325,7 +325,7 @@ var TicTacToe =
         var game = this;
         if (isDom(game.table))
         {
-            var html = "<div style='position: relative; width: 310px; padding: 0px; margin-left: 5px; border: 0px solid black; text-align: left; background: #ffffff url(/js/lib/boredgames/img/ttt_board.png) 0px 0px no-repeat;'>";
+            var html = "<div style='position: relative; width: 310px; padding: 0px; margin-left: 5px; border: 0px solid black; text-align: left; background: #ffffff url(" + game.paths.img + "ttt_board.png) 0px 0px no-repeat;'>";
             for (var row = 0; row < game.board.length; row++)
             {
                 for (var col = 0; col < game.board[row].length; col++)
