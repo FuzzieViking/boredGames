@@ -293,6 +293,7 @@ var BoredGames =
         for (var i = 0; i < bg.games.length; i++)
         {
             eval ('var g = ' + bg.games[i]);
+            alert(g.paths.img + g.logo);
             html += '<tr><td rowspan="2"><img src="' + g.paths.img + g.logo + '" onclick="BoredGames.load(' + "'" + bg.games[i] + "'" + ');" /></td>';
             html += '<td><h3>' + g.name + '</h3></td></tr>';
             html += '<tr><td>' + g.blurb + '</td></tr>';
