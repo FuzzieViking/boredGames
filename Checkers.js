@@ -6,9 +6,10 @@ var Checkers =
     name: 'Checkers',
     display_name: 'Checkers',
     version: 0.1,
-    logo: '/js/lib/boredgames/img/check_logo.png',
+    logo: 'check_logo.png',
     blurb: 'Battle the computer or a friend in this classic game!',
     table: null,
+    paths: {},
     onmove: '',
     onfinish: '',
     onstart: '',
@@ -29,15 +30,16 @@ var Checkers =
         game.onmove = theParams['onmove'];
         game.onfinish = theParams['onfinish'];
         game.onstart = theParams['onstart'];
+        game.paths = theParams['paths'];
         game.image_size = (theParams['image_size'] && theParams['image_size'].length > 0) ? theParams['image_size'] : [38, 38];
         game.images[0] = new Image(game.image_size[0], game.image_size[1]);
-        game.images[0].src = '/js/lib/boredgames/img/rev_empty.gif';
+        game.images[0].src = game.paths.img + 'rev_empty.gif';
         game.images[1] = new Image(game.image_size[0], game.image_size[1]);
-        game.images[1].src = '/js/lib/boredgames/img/rev_black.gif';
+        game.images[1].src = game.paths.img + 'rev_black.gif';
         game.images[2] = new Image(game.image_size[0], game.image_size[1]);
-        game.images[2].src = '/js/lib/boredgames/img/rev_white.gif';
+        game.images[2].src = game.paths.img + 'rev_white.gif';
         game.images[3] = new Image(game.image_size[0], game.image_size[1]);
-        game.images[3].src = '/js/lib/boredgames/img/rev_good.gif';
+        game.images[3].src = game.paths.img + 'rev_good.gif';
        //Turn the stats into a usuable object
         if (isSet(theParams['stats']))
         {

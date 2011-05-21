@@ -6,9 +6,10 @@ var TicTacToe =
     name: 'TicTacToe',
     display_name: 'Tic-Tac-Toe',
     version: 0.1,
-    logo: '/js/lib/boredgames/img/ttt_logo.png',
+    logo: 'ttt_logo.png',
     blurb: 'You know it. You love it. 3 in a row to win!',
     table: null,
+    paths: {},
     onmove: '',
     onfinish: '',
     onstart: '',
@@ -25,13 +26,14 @@ var TicTacToe =
         game.onmove = theParams['onmove'];
         game.onfinish = theParams['onfinish'];
         game.onstart = theParams['onstart'];
+        game.paths = theParams['paths'];
         game.image_size = [90, 90];
         game.images[0] = new Image(game.image_size[0], game.image_size[1]);
-        game.images[0].src = '/js/lib/boredgames/img/ttt_empty.png';
+        game.images[0].src = game.paths.img + 'ttt_empty.png';
         game.images[1] = new Image(game.image_size[0], game.image_size[1]);
-        game.images[1].src = '/js/lib/boredgames/img/ttt_x.png';
+        game.images[1].src = game.paths.img + 'ttt_x.png';
         game.images[2] = new Image(game.image_size[0], game.image_size[1]);
-        game.images[2].src = '/js/lib/boredgames/img/ttt_o.png';
+        game.images[2].src = game.paths.img + 'ttt_o.png';
        //Turn the stats into a usuable object
         if (theParams['stats'])
         {

@@ -9,9 +9,10 @@ var Dots =
     name: 'Dots',
     display_name: 'Dots',
     version: 0.1,
-    logo: '/js/lib/boredgames/img/dots_logo.png',
+    logo: 'dots_logo.png',
     blurb: "Simple game you haven't played in a long time",
     table: null,
+    paths: {},
     onmove: '',
     onfinish: '',
     onstart: '',
@@ -234,13 +235,14 @@ var Dots =
         game.onmove = theParams['onmove'];
         game.onfinish = theParams['onfinish'];
         game.onstart = theParams['onstart'];
+        game.paths = theParams['paths'];
         game.image_size = [10, 10];
         game.images[0] = new Image(game.image_size[0], game.image_size[1]);
-        game.images[0].src = '/js/lib/boredgames/img/dots_dot.png';
+        game.images[0].src = game.paths.img + 'dots_dot.png';
         game.images[1] = new Image(game.image_size[0], game.image_size[1]);
-        game.images[1].src = '/js/lib/boredgames/img/dots_selected.png';
+        game.images[1].src = game.paths.img + 'dots_selected.png';
         game.images[2] = new Image(game.image_size[0], game.image_size[1]);
-        game.images[2].src = '/js/lib/boredgames/img/dots_option.png';
+        game.images[2].src = game.paths.img + 'dots_option.png';
        //Turn the stats into a usuable object
         if (theParams['stats'])
         {

@@ -43,7 +43,7 @@ var BoredGames =
     {
         var bg = this;
         bg.target = theParams['target'];
-        bg.paths = theParams['paths'] || { css: '/js/lib/boredgames/css/', img: '/js/lib/boredgames/img/' };
+        bg.paths = theParams['paths'] || { css: '/css/', img: '/img/' };
         var raw_stats = Cookie.get('BoredGames');
         if (raw_stats)
         {
@@ -119,6 +119,7 @@ var BoredGames =
             bg.game.init({
                             table: 'boredgames_board',
                             stats: bg.stats[bg.game.name] || null,
+                            paths: bg.paths,
                             onstart: function ()
                             {   BoredGames.start();    },
                             onfinish: function ()
@@ -292,7 +293,7 @@ var BoredGames =
         for (var i = 0; i < bg.games.length; i++)
         {
             eval ('var g = ' + bg.games[i]);
-            html += '<tr><td rowspan="2"><img src="' + g.logo + '" onclick="BoredGames.load(' + "'" + bg.games[i] + "'" + ');" /></td>';
+            html += '<tr><td rowspan="2"><img src="' g.paths.img + g.logo + '" onclick="BoredGames.load(' + "'" + bg.games[i] + "'" + ');" /></td>';
             html += '<td><h3>' + g.name + '</h3></td></tr>';
             html += '<tr><td>' + g.blurb + '</td></tr>';
         }
