@@ -33,7 +33,7 @@ var TicTacToe =
         game.images[1] = new Image(game.image_size[0], game.image_size[1]);
         game.images[1].src = game.paths.img + 'ttt_x.png';
         game.images[2] = new Image(game.image_size[0], game.image_size[1]);
-        game.images[2].src = game.paths.img + 'ttt_o.png';
+        game.images[2].src = game.paths.img + 'ttt_o.png';alert(game.images[2].src);
        //Turn the stats into a usuable object
         if (theParams['stats'])
         {
